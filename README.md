@@ -41,12 +41,12 @@ python app.py
    (the YAML header above configures the Space automatically). Or push via git:
    ```bash
    git init && git add . && git commit -m "AI Avatar"
-   git remote add space https://huggingface.co/spaces/<your-username>/anand-ai-avatar
+   git remote add space https://huggingface.co/spaces/anandintouch/anand-ai-avatar
    git push space main
    ```
 3. In the Space: **Settings → Variables and secrets → New secret** →
    name `ANTHROPIC_API_KEY`, value your API key. The Space restarts and
-   goes live at `https://huggingface.co/spaces/<your-username>/anand-ai-avatar`.
+   goes live at `https://huggingface.co/spaces/anandintouch/anand-ai-avatar`.
 
 ## Add to LinkedIn Featured section
 
