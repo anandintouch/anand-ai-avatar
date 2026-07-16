@@ -12,11 +12,33 @@ Run locally:
     python app.py
 """
 
+import base64
 import os
 from pathlib import Path
 
 import anthropic
 import gradio as gr
+
+try:
+    import spaces
+except ImportError:
+    # `spaces` only exists in the Hugging Face ZeroGPU runtime. Provide a
+    # no-op fallback so the app also runs locally without that package.
+    class _SpacesStub:
+        def GPU(self, *args, **kwargs):
+            if args and callable(args[0]):  # bare @spaces.GPU usage
+                return args[0]
+            return lambda fn: fn  # @spaces.GPU(...) usage
+
+    spaces = _SpacesStub()
+
+
+@spaces.GPU
+def _zerogpu_warmup():
+    # No-op that satisfies ZeroGPU's requirement for a @spaces.GPU function
+    # at startup. This app does all inference via the Anthropic API, so no
+    # GPU is ever used; the chat itself runs on the Space's CPU.
+    return None
 
 MODEL = "claude-opus-4-8"
 MAX_TOKENS = 2048
@@ -95,19 +117,57 @@ EXAMPLES = [
 ]
 
 DESCRIPTION = (
-    "Hi! I'm **Anand Prakash's AI Avatar**. Ask me anything about his 18+ years "
-    "in IT — cloud-native applications, AI / GenAI & Agentic systems, his "
+    "Hi! I'm **Anand Prakash's AI Avatar**. Ask me anything about his 20+ years "
+    "in IT — Cloud-native applications, AI / GenAI & Agentic systems, his "
     "Executive Decision Intelligence platform, awards, certifications, and his "
     "strategic leadership in digital & cloud transformation.\n\n"
     "[Connect with Anand on LinkedIn](https://www.linkedin.com/in/anandprakash1/)"
 )
 
-demo = gr.ChatInterface(
-    fn=respond,
-    title="💼 Anand Prakash — AI Avatar",
-    description=DESCRIPTION,
-    examples=EXAMPLES,
+TITLE = "Anand Prakash — AI Avatar"
+
+
+def _avatar_img_tag():
+    """Return an <img> tag for Anand's photo (avatar.jpg/.png/.webp next to
+    this script) as a base64 data URI, or "" if no such file exists. Base64
+    means it paints immediately as raw HTML — no file serving needed."""
+    mimes = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+             ".png": "image/png", ".webp": "image/webp"}
+    for suffix, mime in mimes.items():
+        path = Path(__file__).with_name("avatar" + suffix)
+        if path.exists():
+            b64 = base64.b64encode(path.read_bytes()).decode()
+            return (
+                f'<img src="data:{mime};base64,{b64}" alt="Anand Prakash" '
+                'style="width:72px;height:72px;border-radius:50%;flex:0 0 auto;'
+                'object-fit:cover;border:3px solid #4f46e5;'
+                'box-shadow:0 2px 8px rgba(0,0,0,0.15)">'
+            )
+    return ""
+
+
+# Header: avatar (if present) to the left of the title text, centered as a row.
+HEADER_HTML = (
+    '<div style="display:flex;align-items:center;justify-content:center;'
+    'gap:16px;margin:0.75rem 0 0.25rem;flex-wrap:wrap">'
+    + _avatar_img_tag()
+    + f'<h1 style="margin:0;font-size:1.9rem;font-weight:700">💼 {TITLE}</h1>'
+    + '</div>'
 )
 
+with gr.Blocks(title=TITLE) as demo:
+    gr.HTML(HEADER_HTML)
+    gr.ChatInterface(
+        fn=respond,
+        description=DESCRIPTION,
+        examples=EXAMPLES,
+    )
+
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
+    # Use PORT if explicitly set; otherwise let Gradio auto-pick a free port
+    # (scanning upward from 7860) so a busy port doesn't crash startup.
+    port = os.environ.get("PORT")
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(port) if port else None,
+    )

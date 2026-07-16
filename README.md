@@ -1,13 +1,15 @@
 ---
-title: Anand Prakash AI Avatar
+title: My AI Avatar to interact
 emoji: 💼
 colorFrom: blue
 colorTo: indigo
 sdk: gradio
+sdk_version: 6.20.0
+suggested_hardware: zero-a10g
 app_file: app.py
 pinned: true
 license: mit
-short_description: Ask about Anand's IT, AI/GenAI & leadership experience
+short_description: Ask about Anand's IT, AI/GenAI & Leadership Experience
 ---
 
 # Anand Prakash — AI Avatar Agent

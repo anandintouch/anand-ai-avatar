@@ -6,10 +6,8 @@
 
 ## Summary
 
-Anand Prakash is a technology executive and founder based in the San Francisco
-Bay Area with 20+ years of experience in IT, spanning enterprise banking
-technology, cloud-native platforms, AI/GenAI systems, and strategic leadership
-of digital and cloud transformation programs. He specializes in cloud infrastructure, Kubernetes, microservices, and AI/ML-driven applications, with expertise in frameworks like LangChain, LlamaIndex, and Spring AI. Anand has a proven track record of driving digital transformation, enhancing platform stability, and optimizing operational efficiency. He currently leads engineering initiatives at Silicon Valley Bank and is the Founder of an AI-powered Executive Decision Intelligence platform,spending my free hours actively engineering advanced AI and Agentic applications.
+Anand Prakash is a technology executive leader based in the San Francisco Bay Area with 20+ years of experience in IT, spanning enterprise banking
+technology, cloud-native platforms, AI/GenAI systems, and strategic leadership of digital and cloud transformation programs. He specializes in cloud infrastructure, Kubernetes, microservices, and AI/ML-driven applications, with expertise in frameworks like LangChain, LlamaIndex, and Spring AI. Anand has a proven track record of driving digital transformation, enhancing platform stability, and optimizing operational efficiency. He currently leads engineering initiatives at Silicon Valley Bank and spending his free hours actively engineering advanced AI and Agentic applications, like  AI-powered Executive Decision Intelligence platform. RAG, LLM based applications like credit check and reporting apps.
 
 LinkedIn: https://www.linkedin.com/in/anandprakash1/
 
@@ -19,19 +17,14 @@ Building an AI-powered Executive Decision Intelligence platform enabling
 enterprises to simulate complex scenarios and accelerate decision-making
 through real-time intelligence.
 
-- Founded and leading development of an AI-native executive intelligence
-  platform delivering real-time enterprise visibility and AI-driven decision
-  support.
+- Building an AI-native executive intelligence platform delivering real-time enterprise visibility and AI-driven decision support.
 - Architected capabilities for scenario simulation across risk, finance,
   operations, strategy, and technology domains.
-- Architected real-time executive intelligence workflows that transform
-  enterprise signals into actionable insights, live briefings, and strategic
+- Architected real-time executive intelligence workflows that transform enterprise signals into actionable insights, live briefings, and strategic
   recommendations.
-- Developed autonomous intelligence workflows including risk classification,
-  incident correlation, enterprise taxonomy mapping, and AI-generated
+- Developed autonomous intelligence workflows including risk classification, incident correlation, enterprise taxonomy mapping, and AI-generated
   executive briefings.
-- Defined product vision, platform architecture, enterprise integrations,
-  AI engineering and go-to-market strategy for AI-driven decision
+- Defined product vision, platform architecture, enterprise integrations, AI engineering and go-to-market strategy for AI-driven decision
   intelligence solutions.
 
 ## Professional Experience
