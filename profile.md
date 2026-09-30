@@ -13,19 +13,37 @@ LinkedIn: https://www.linkedin.com/in/anandprakash1/
 
 ## Current Venture — AI-Powered Executive Decision Intelligence Platform
 
-Building an AI-powered Executive Decision Intelligence platform enabling
-enterprises to simulate complex scenarios and accelerate decision-making
-through real-time intelligence.
+A reasoning layer that watches the business 24/7, escalates what matters, and
+answers the off-axis questions executives actually ask. This decision
+intelligence platform replaces reactive dashboards with autonomous AI agents
+that continuously scan, interpret, and escalate what truly matters — so leaders
+act before the market moves.
 
-- Building an AI-native executive intelligence platform delivering real-time enterprise visibility and AI-driven decision support.
+- Building an AI-native executive intelligence platform delivering real-time
+  enterprise visibility and AI-driven decision support.
 - Architected capabilities for scenario simulation across risk, finance,
   operations, strategy, and technology domains.
-- Architected real-time executive intelligence workflows that transform enterprise signals into actionable insights, live briefings, and strategic
+- Architected real-time executive intelligence workflows that transform
+  enterprise signals into actionable insights, live briefings, and strategic
   recommendations.
-- Developed autonomous intelligence workflows including risk classification, incident correlation, enterprise taxonomy mapping, and AI-generated
+- Developed autonomous intelligence workflows including risk classification,
+  incident correlation, enterprise taxonomy mapping, and AI-generated
   executive briefings.
-- Defined product vision, platform architecture, enterprise integrations, AI engineering and go-to-market strategy for AI-driven decision
-  intelligence solutions.
+- Defined product vision, platform architecture, enterprise integrations, AI
+  engineering and go-to-market strategy for AI-driven decision intelligence
+  solutions.
+
+### Technology Stack
+
+- **Front end:** React + Vite + TypeScript.
+- **API layer:** Express + TypeScript.
+- **Agentic / QA intelligence:** Python with a custom agent framework built on
+  LangGraph, langchain-core, and LangSmith, using OpenAI-compatible LLMs.
+- **Retrieval:** Lightweight TF-IDF RAG for retrieval (no vector database).
+- **Data:** JSON / CSV data sources.
+- **Deployment & infrastructure:** Firebase App Hosting for the web/API tier,
+  Google Cloud Run for the Python agentic services, and GitHub Actions for
+  CI/CD.
 
 ## Professional Experience
 
@@ -98,10 +116,12 @@ vision & go-to-market · Engineering leadership
 ## Education
 
 - **Indiana University — Kelley School of Business** (2022–2024)
+  Degree: Master of Science - Information Technology Management
   Digital Transformation, Management & Leadership — Data Analytics,
   Enterprise/Big Data Management, Machine Learning and AI in Business.
   GPA: 3.91
-- [PLEASE UPDATE: undergraduate degree, institution, year]
+- Degree: Bachelor of Engineering (B.Eng.)- Mechanical Engineering
+  College: M. S. Ramaiah Institute of Technology, Bangalore University
 
 ## Certifications
 
@@ -119,7 +139,8 @@ vision & go-to-market · Engineering leadership
 - CTO Employee Recognition list — leadership of the ISO 20022 initiative
   (Silicon Valley Bank)
 - Global Productivity Hackathon award — PayPal (Nov 2013)
-- [PLEASE UPDATE: any additional awards]
+- Earned NorthStar Award for Forward-Thinking Leadership from SVB CTO, Sept 2025.
+- Contributor to JBPM open-source project for Oracle Database enhancements.
 
 ## Publications & Thought Leadership
 
@@ -136,4 +157,4 @@ vision & go-to-market · Engineering leadership
 ## Contact
 
 - LinkedIn: https://www.linkedin.com/in/anandprakash1/
-- Email: [PLEASE UPDATE if you want the avatar to share an email]
+- Email: anandintouch.work@gmail.com
